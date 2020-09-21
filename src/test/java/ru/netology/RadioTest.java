@@ -80,7 +80,6 @@ class RadioTest {
         radio.setCurrentVolume(-1);
         radio.decreaseCurrentVolume();
         int expected = 0;
-
         assertEquals(0, radio.getCurrentVolume());
     }
 }
