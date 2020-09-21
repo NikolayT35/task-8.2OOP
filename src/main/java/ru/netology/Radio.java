@@ -69,18 +69,22 @@ public class Radio {
     }
 
     public int getMaxStation () {
+
         return maxStation;
     }
 
     public void setMaxStation(int maxStation) {
+
         this.maxStation = maxStation;
     }
 
     public int getMinStation() {
+
         return minStation;
     }
 
     public void setMinStation(int minStation) {
+
         this.minStation = minStation;
     }
 
