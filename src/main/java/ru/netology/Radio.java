@@ -8,6 +8,9 @@ public class Radio {
     private int maxVolume = 10;
     private int minVolume = 0;
 
+ public Radio(){
+ }
+
     public int getCurrentStation() {
         return currentStation;
     }

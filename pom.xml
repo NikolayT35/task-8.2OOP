@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>ru.netology.domain</groupId>
-    <artifactId>task-8.2OOP</artifactId>
+    <artifactId>task-10.1radio2</artifactId>
     <version>1.0-SNAPSHOT</version>
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
