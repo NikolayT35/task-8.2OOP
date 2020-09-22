@@ -7,6 +7,19 @@ class RadioTest {
     Radio radio = new Radio();
 
     @Test
+    public void shouldSetMaxStation() {
+        Radio radio = new Radio(50);
+        assertEquals(50, radio.getMaxStation());
+    }
+
+    @Test
+    public void shouldIncreaseWithNewMaxStation() {
+        Radio radio = new Radio(14);
+        radio.setCurrentStation(12);
+        radio.increaseCurrentStation();
+        assertEquals(13, radio.getCurrentStation());
+    }
+    @Test
     public void shouldSetRequiredStation() {
         radio.setCurrentStation(6);
         assertEquals(6, radio.getCurrentStation());
@@ -21,14 +34,14 @@ class RadioTest {
 
     @Test
     public void shouldIncreaseCurrentStationIfLimit() {
-        radio.setCurrentStation(9);
+        radio.setCurrentStation(10);
         radio.increaseCurrentStation();
         assertEquals(0, radio.getCurrentStation());
     }
 
     @Test
     public void shouldIncreaseCurrentStationIfOverLimit() {
-        radio.setCurrentStation(10);
+        radio.setCurrentStation(12);
         radio.increaseCurrentStation();
         assertEquals(0, radio.getCurrentStation());
     }
@@ -44,40 +57,40 @@ class RadioTest {
     public void shouldDecreaseCurrentStationIfLimit() {
         radio.setCurrentStation(0);
         radio.decreaseCurrentStation();
-        assertEquals(9, radio.getCurrentStation());
+        assertEquals(10, radio.getCurrentStation());
     }
 
     @Test
     public void shouldDecreaseCurrentStationIfUnderLimit() {
-        radio.setCurrentStation(-1);
+        radio.setCurrentStation(-10);
         radio.decreaseCurrentStation();
-        assertEquals(9, radio.getCurrentStation());
+        assertEquals(10, radio.getCurrentStation());
     }
 
     @Test
     public void shouldIncreaseCurrentVolume() {
-        radio.setCurrentVolume(5);
+        radio.setCurrentVolume(49);
         radio.increaseCurrentVolume();
-        assertEquals(6, radio.getCurrentVolume());
+        assertEquals(50, radio.getCurrentVolume());
     }
 
     @Test
     public void shouldIncreaseCurrentVolumeIfOverLimit() {
-        radio.setCurrentVolume(11);
+        radio.setCurrentVolume(110);
         radio.increaseCurrentVolume();
-        assertEquals(10, radio.getCurrentVolume());
+        assertEquals(100, radio.getCurrentVolume());
     }
 
     @Test
     public void shouldDecreaseCurrentVolume() {
-        radio.setCurrentVolume(5);
+        radio.setCurrentVolume(50);
         radio.decreaseCurrentVolume();
-        assertEquals(4, radio.getCurrentVolume());
+        assertEquals(49, radio.getCurrentVolume());
     }
 
     @Test
     public void shouldDecreaseCurrentVolumeIfUnderLimit() {
-        radio.setCurrentVolume(-1);
+        radio.setCurrentVolume(-100);
         radio.decreaseCurrentVolume();
         int expected = 0;
 
