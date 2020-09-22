@@ -44,6 +44,7 @@ public class RadioTest {
     @Test
     public void shouldIncreaseCurrentStationIfOverLimit() {
         radio.setCurrentStation(12);
+        radio.setCurrentStation(10);
         radio.increaseCurrentStation();
         assertEquals(0, radio.getCurrentStation());
     }
@@ -53,6 +54,9 @@ public class RadioTest {
         radio.setCurrentStation(7);
         radio.decreaseCurrentStation();
         assertEquals(6, radio.getCurrentStation());
+        radio.setCurrentStation(2);
+        radio.decreaseCurrentStation();
+        assertEquals(1, radio.getCurrentStation());
     }
 
     @Test
@@ -60,6 +64,7 @@ public class RadioTest {
         radio.setCurrentStation(0);
         radio.decreaseCurrentStation();
         assertEquals(10, radio.getCurrentStation());
+        assertEquals(9, radio.getCurrentStation());
     }
 
     @Test
@@ -82,7 +87,6 @@ public class RadioTest {
         radio.increaseCurrentVolume();
         assertEquals(100, radio.getCurrentVolume());
     }
-
     @Test
     public void shouldDecreaseCurrentVolume() {
         radio.setCurrentVolume(50);
@@ -97,3 +101,4 @@ public class RadioTest {
         assertEquals(0, radio.getCurrentVolume());
     }
 }
+
