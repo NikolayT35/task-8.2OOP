@@ -9,16 +9,20 @@ public class RadioTest {
 
     @Test
     public void shouldSetMaxStation() {
+
         Radio radio = new Radio(12);
         assertEquals(12, radio.getMaxStation());
+
     }
 
     @Test
     public void shouldIncreaseWithNewMaxStation() {
+
         Radio radio = new Radio(12);
         radio.setCurrentStation(10);
         radio.increaseCurrentStation();
         assertEquals(11, radio.getCurrentStation());
+
     }
 
     @Test
@@ -82,7 +86,6 @@ public class RadioTest {
         radio.increaseCurrentVolume();
         assertEquals(100, radio.getCurrentVolume());
     }
-
     @Test
     public void shouldDecreaseCurrentVolume() {
         radio.setCurrentVolume(50);
@@ -97,3 +100,4 @@ public class RadioTest {
         assertEquals(0, radio.getCurrentVolume());
     }
 }
+
